@@ -21,13 +21,11 @@
                             <Expense ExpenseType="Transportation" ExpenseAmount="50" />
                         </Person>
                         <Person Name="Lisa" Department="Marketing">
-                            <Expense ExpenseType="Document printing"
-          ExpenseAmount="50"/>
+                            <Expense ExpenseType="Document printing" ExpenseAmount="50"/>
                             <Expense ExpenseType="Gift" ExpenseAmount="125" />
                         </Person>
                         <Person Name="John" Department="Engineering">
-                            <Expense ExpenseType="Magazine subscription" 
-         ExpenseAmount="50"/>
+                            <Expense ExpenseType="Magazine subscription" ExpenseAmount="50"/>
                             <Expense ExpenseType="New machine" ExpenseAmount="600" />
                             <Expense ExpenseType="Software" ExpenseAmount="500" />
                         </Person>
@@ -65,21 +63,20 @@
 
 
         <!-- People list -->
-        
+
         <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource headerTextStyle}">
             View Expense Report
         </Label>
 
-        
+
         <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource listHeaderStyle}">
             <Label Style="{StaticResource listHeaderTextStyle}">Names</Label>
         </Border>
-        
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
-            <ListBoxItem>Mike</ListBoxItem>
-            <ListBoxItem>Lisa</ListBoxItem>
-            <ListBoxItem>John</ListBoxItem>
-            <ListBoxItem>Mary</ListBoxItem>
+
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2"
+            ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
+            ItemTemplate="{StaticResource nameItemTemplate}"
+                 >
         </ListBox>
 
         <!-- View report button -->
